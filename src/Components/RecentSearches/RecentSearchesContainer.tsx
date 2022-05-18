@@ -38,7 +38,6 @@ export const RecentSearchesContainer = () => {
           <ClearIcon/>
         </IconButton>
       </Box>
-      
       <RecentSearches/>
     </Paper>
   )

@@ -5,7 +5,7 @@ import { ZipLookupForm } from "./ZipLookupForm"
 
 export const ZipLookupFormContainer = () => {
   const matches = useMediaQuery('(min-width:500px')
-  console.log(matches)
+
   return (
     <Paper 
       elevation={3}
