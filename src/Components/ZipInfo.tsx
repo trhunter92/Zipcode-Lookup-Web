@@ -1,12 +1,23 @@
 import Typography from "@mui/material/Typography"
 
-import { ResponseData } from "../Queries/GetZipInfo"
-
-export const ZipInfo = ({ data }: ResponseData) => {
+export const ZipInfo = ({ data }: ZipInfoProps) => {
   return (
     <>
-      <Typography>{data.getZipInfo.places[0].placeName}</Typography>
-      <Typography>{data.getZipInfo.places[0].state}</Typography>
+      <Typography>{`City: ${data.getZipInfo.places[0].placeName}`}</Typography>
+      <Typography>{`State: ${data.getZipInfo.places[0].state}`}</Typography>
     </>
   )
+}
+
+interface ZipInfoProps {
+  data: {
+    getZipInfo: {
+      places: [
+        {
+          placeName: String
+          state: String
+        }
+      ]
+    }
+  }
 }
