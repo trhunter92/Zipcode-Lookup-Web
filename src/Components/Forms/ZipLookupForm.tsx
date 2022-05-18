@@ -15,6 +15,7 @@ export const ZipLookupForm = () => {
     handleCountryInputChange,
     handleZipInputChange,
     onSubmit,
+    zipError
   } = useZipLookupForm()
 
   const { loading, data, error } = useContext(GetZipInfoQueryContext)
@@ -41,11 +42,13 @@ export const ZipLookupForm = () => {
       </TextField>
       <TextField
         required
+        error={!!zipError}
         disabled={loading}
         label="Input Zip Code"
         variant="filled"
         value={zipInput}
         onChange={handleZipInputChange}
+        helperText={zipError}
         sx={{
           marginTop: "30px"
         }}
